@@ -1,0 +1,14 @@
+{
+  "agent_name": "Chat Agent",
+  "agent_id": "699b595299a581580fa6037c",
+  "description": "General-purpose conversational AI assistant that responds to user messages with intelligent, helpful responses",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "text": "string"
+  },
+  "example_response": {
+    "text": "The assistant's response message"
+  }
+}

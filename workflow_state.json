@@ -1,0 +1,21 @@
+{
+  "agents": {
+    "chat_agent": {
+      "agent_id": "699b595299a581580fa6037c",
+      "name": "Chat Agent",
+      "description": "General-purpose conversational AI assistant that responds to user messages with intelligent, helpful responses",
+      "agent_type": "text",
+      "model": "gpt-4.1",
+      "provider": "openai",
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "has_tools": false,
+      "has_knowledge_base": false,
+      "has_image_output": false,
+      "has_voice": false,
+      "has_file_output": false
+    }
+  },
+  "workflow_pattern": "single_agent",
+  "total_agents": 1
+}

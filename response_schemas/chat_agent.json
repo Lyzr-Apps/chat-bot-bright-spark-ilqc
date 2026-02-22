@@ -1,0 +1,11 @@
+{
+  "agent_name": "Chat Agent",
+  "agent_type": "text",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_structure": {
+    "text": "string - The assistant's response message"
+  },
+  "access_pattern": "result.response.result.text",
+  "notes": "Single conversational agent. Parse JSON response and extract text field."
+}
