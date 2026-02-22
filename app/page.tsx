@@ -270,6 +270,63 @@ class ErrorBoundary extends React.Component<
   }
 }
 
+// ---------- Animated Cat ----------
+function AnimatedCat() {
+  return (
+    <div className="relative w-8 h-8 flex-shrink-0 group" title="Meow!">
+      {/* Tail */}
+      <svg
+        viewBox="0 0 24 24"
+        className="absolute -left-2.5 bottom-0.5 w-5 h-5"
+        style={{ animation: 'tailSwish 1.5s ease-in-out infinite' }}
+      >
+        <path
+          d="M2 18 C6 10, 10 14, 12 12"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          fill="none"
+          className="text-muted-foreground/60"
+        />
+      </svg>
+      {/* Body */}
+      <div className="absolute bottom-0 left-0 right-0 mx-auto w-6 h-4 rounded-t-full bg-muted-foreground/20" />
+      {/* Head */}
+      <div
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 w-5 h-5"
+        style={{ animation: 'catBob 2.5s ease-in-out infinite' }}
+      >
+        {/* Ears */}
+        <div className="absolute -top-1.5 left-0 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-muted-foreground/40" />
+        <div className="absolute -top-1.5 right-0 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-muted-foreground/40" />
+        {/* Face */}
+        <div className="w-5 h-4 rounded-full bg-muted-foreground/30 relative">
+          {/* Eyes */}
+          <div className="absolute top-1.5 left-1 w-1 h-1 rounded-full bg-foreground/70" style={{ animation: 'catBlink 3s ease-in-out infinite' }} />
+          <div className="absolute top-1.5 right-1 w-1 h-1 rounded-full bg-foreground/70" style={{ animation: 'catBlink 3s ease-in-out infinite 0.1s' }} />
+          {/* Nose */}
+          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-0.5 h-0.5 rounded-full bg-pink-400/60" />
+        </div>
+      </div>
+      {/* Inline keyframes */}
+      <style>{`
+        @keyframes tailSwish {
+          0%, 100% { transform: rotate(-15deg); }
+          50% { transform: rotate(15deg); }
+        }
+        @keyframes catBob {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(-2px); }
+        }
+        @keyframes catBlink {
+          0%, 42%, 46%, 100% { transform: scaleY(1); }
+          44% { transform: scaleY(0.1); }
+        }
+      `}</style>
+    </div>
+  )
+}
+
 // ---------- Typing Indicator ----------
 function TypingIndicator() {
   return (
@@ -768,6 +825,7 @@ export default function Page() {
           <div className="border-t border-border p-4 bg-card/30 backdrop-blur-sm flex-shrink-0">
             <div className="max-w-3xl mx-auto">
               <div className="flex items-end gap-2 bg-background border border-border rounded-2xl px-4 py-2 focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/20 transition-all">
+                <AnimatedCat />
                 <textarea
                   ref={textareaRef}
                   value={inputValue}
