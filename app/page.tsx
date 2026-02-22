@@ -355,7 +355,7 @@ function WelcomeScreen({ onPromptClick }: { onPromptClick: (text: string) => voi
           <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
             <FiMessageSquare className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-2xl font-bold text-foreground">ChatBot Assistant</h2>
+          <h2 className="text-2xl font-bold text-foreground">Chabbychatbot</h2>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto">
             Start a conversation by typing a message below or choose one of the suggested prompts to get started.
           </p>
@@ -622,7 +622,7 @@ export default function Page() {
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                 <FiMessageSquare className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-foreground text-sm">ChatBot Assistant</span>
+              <span className="font-semibold text-foreground text-sm">Chabbychatbot</span>
             </div>
             <button
               onClick={() => setSidebarOpen(false)}
